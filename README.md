@@ -99,6 +99,23 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'OnlyPictures'
 ```
+
+#### Swift Package Manager
+
+In Xcode, go to `File -> Add Package Dependencies...` and enter the repository URL:
+
+```
+https://github.com/KiranJasvanee/OnlyPictures
+```
+
+Or add it to the `dependencies` of your `Package.swift`:
+
+```swift
+.package(url: "https://github.com/KiranJasvanee/OnlyPictures.git", from: "2.0.0")
+```
+
+When using `OnlyHorizontalPictures` from a storyboard, set `Module` to `OnlyPictures` in the Identity Inspector alongside the class name.
+
 ### Explaination & Live tracker.
 <p align="center">
   <img src="promo/onlyPictures//live_tracker_3.gif"  style="width: 260px;" width="260" />
