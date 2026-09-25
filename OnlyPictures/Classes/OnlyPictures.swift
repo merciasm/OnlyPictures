@@ -31,7 +31,7 @@ public enum ListOrder {
 }
 
 
-public class OnlyPictures: UIView {
+open class OnlyPictures: UIView {
     
     
     internal let viewBase = UIView()                          // Superview of all.
@@ -60,7 +60,7 @@ public class OnlyPictures: UIView {
     
     
     // init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setupInitLayout()
@@ -84,13 +84,13 @@ public class OnlyPictures: UIView {
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override public func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         // Drawing code
     }
     
     
     // layout subviews when layout changes
-    override public func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutIfNeeded()
         self.doLayoutChanges()
     }
@@ -503,7 +503,7 @@ internal extension OnlyPictures {
         return imageview
     }
     
-    internal func setBorderImageViewPath(_ view: UIView) {
+    func setBorderImageViewPath(_ view: UIView) {
         
         let layerMask = CAShapeLayer()
         let bezierPath = UIBezierPath.init(arcCenter: CGPoint(x: SIZE_OF_IMAGEVIEWS/2, y: SIZE_OF_IMAGEVIEWS/2), radius: (SIZE_OF_IMAGEVIEWS/2) - 0.5, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: false)
@@ -511,7 +511,7 @@ internal extension OnlyPictures {
         view.layer.mask = layerMask
     }
     
-    internal func setBorderRemainingCountPath(_ view: UIView) {
+    func setBorderRemainingCountPath(_ view: UIView) {
         
         let layerMask = CAShapeLayer()
         //let bezierPath = UIBezierPath.init(arcCenter: CGPoint(x: SIZE_OF_IMAGEVIEWS/2, y: SIZE_OF_IMAGEVIEWS/2), radius: (SIZE_OF_IMAGEVIEWS/2) - 0.5, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: false)
@@ -522,7 +522,7 @@ internal extension OnlyPictures {
     
     @objc private func pictureTapActionListener(recognizer: UITapGestureRecognizer){
         if let imageviewTapped = recognizer.view as? UIImageView {
-            if let index = self.stackviewOfImageViews.arrangedSubviews.index(of: imageviewTapped) {
+            if let index = self.stackviewOfImageViews.arrangedSubviews.firstIndex(of: imageviewTapped) {
                 self.delegate?.pictureView(onlyPictureView: self, imageviewTapped, didSelectAt: index)
             }
         }

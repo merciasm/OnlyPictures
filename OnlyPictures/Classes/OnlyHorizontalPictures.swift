@@ -21,10 +21,10 @@ public enum RecentAt {
 }
 
 
-public class OnlyHorizontalPictures: OnlyPictures {
+open class OnlyHorizontalPictures: OnlyPictures {
     
     // init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
     }
@@ -35,7 +35,7 @@ public class OnlyHorizontalPictures: OnlyPictures {
     }
     
     // layout subviews when layout changes
-    override public func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         self.doLayoutChanges()
     }
