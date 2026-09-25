@@ -111,7 +111,7 @@ https://github.com/merciasm/OnlyPictures
 Or add it to the `dependencies` of your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/merciasm/OnlyPictures.git", from: "1.1.0")
+.package(url: "https://github.com/merciasm/OnlyPictures.git", from: "2.0.0")
 ```
 
 When using `OnlyHorizontalPictures` from a storyboard, set `Module` to `OnlyPictures` in the Identity Inspector alongside the class name.
